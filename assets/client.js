@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    //var socket = io.connect("http://localhost:7171");
-    var socket = io.connect("http://3.135.212.139:3000");
+    var socket = io.connect("http://localhost:3000");
+    //var socket = io.connect("http://3.135.212.139:3000");
     var ready = false;
 
     $("#submit").submit(function(e) {
@@ -10,7 +10,7 @@ $(document).ready(function(){
         var name = $("#nickname").val();
         var time = new Date();
         $("#name").html(name);
-        $("#time").html('First login: ' + time.getHours() + ':' + time.getMinutes());
+        $("#time").html('Primeiro acesso: ' + time.getHours() + ':' + time.getMinutes());
     
         ready = true;
         socket.emit("join", name);
@@ -31,6 +31,7 @@ $(document).ready(function(){
                           + $("#nickname").val() + ':</span>    <p>' + text + '</p><time>' + 
                           time.getHours() + ':' + time.getMinutes() + '</time></div></li>');
              socket.emit("send", text);
+             scrollToBottom();
         }
     });
     

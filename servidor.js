@@ -15,10 +15,10 @@ app.use('/socket.io-client',express.static(path.join(__dirname+'/node_modules/so
 //SocketIO vem aqui
 io.on("connection", function (client) {
     client.on("join", function(name){
-      console.log("Joined: " + name);
+      console.log("Conectado: " + name);
       clients[client.id] = name;
-      client.emit("update", "You have connected to the server.");
-      client.broadcast.emit("update", name + " has joined the server.")
+      client.emit("update", "Você entrou na sala.");
+      client.broadcast.emit("update", name + " entrou na sala.")
     });
   
     client.on("send", function(msg){
@@ -27,12 +27,12 @@ io.on("connection", function (client) {
     });
   
     client.on("disconnect", function(){
-      console.log("Disconnect");
-      io.emit("update", clients[client.id] + " has left the server.");
+      console.log("Desconectado");
+      io.emit("update", clients[client.id] + " saiu da sala.");
       delete clients[client.id];
     });
   });
 
 http.listen(PORT, function(){
-console.log('listening on port %s', PORT);
+console.log('Servidor rodando na porta %s', PORT);
 });
