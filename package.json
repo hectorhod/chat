@@ -1,0 +1,28 @@
+{
+  "name": "websocket",
+  "version": "1.0.0",
+  "description": "atividade aula 10",
+  "main": "servidor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hectorhod/aula10.git"
+  },
+  "author": "Hector",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hectorhod/aula10/issues"
+  },
+  "homepage": "https://github.com/hectorhod/aula10#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "morgan": "^1.10.0",
+    "socket.io": "^4.3.1",
+    "socket.io-client": "^4.3.2",
+    "socketio": "^1.0.0"
+  }
+}
