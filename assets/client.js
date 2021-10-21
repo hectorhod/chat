@@ -41,6 +41,7 @@ $(document).ready(function(){
            $(".chat").append('<li class="other"><div class="msg"><span>' + 
                         client + ':</span><p>' + msg + '</p><time>' + time.getHours() + ':' + 
                         time.getMinutes() + '</time></div></li>');
+                        scrollToBottom();
         }
        });
 });
