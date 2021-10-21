@@ -11,8 +11,7 @@ app.use(express.static(path.join(__dirname+'/assets')))
 app.use('/jquery',express.static(path.join(__dirname+'/node_modules/jquery/dist')))
 app.use('/socket.io-client',express.static(path.join(__dirname+'/node_modules/socket.io-client/dist')))
 
-
-//SocketIO vem aqui
+// Socket.io
 io.on("connection", function (client) {
     client.on("join", function(name){
       console.log("Conectado: " + name);
