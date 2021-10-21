@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hectorhod/aula10.git"
+    "url": "git+https://github.com/hectorhod/chat.git"
   },
   "author": "Hector",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hectorhod/aula10/issues"
+    "url": "https://github.com/hectorhod/chat/issues"
   },
-  "homepage": "https://github.com/hectorhod/aula10#readme",
+  "homepage": "https://github.com/hectorhod/chat#readme",
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
