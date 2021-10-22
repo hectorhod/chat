@@ -24,9 +24,9 @@ $(document).ready(function(){
 
     socket.on("lista", function(clients){
         if (ready) {
-            $('#navbar__menu').html("");
+            $('.navbar__menu').html("");
             for(const [key,value] of Object.entries(clients)){
-                $('#navbar__menu').append('<li class="navbar__item">'+ value +'</li>')
+                $('.navbar__menu').append('<li class="navbar__item">'+ value +'</li>')
             }
         }
     });
