@@ -15,9 +15,12 @@ $(document).ready(function(){
         socket.emit("join", name);
     });
 
+
     socket.on("update", function(msg) {
         if (ready) {
             $('.chat').append('<li class="info">' + msg + '</li>')
+            $('#clients').load('/clients')
+
         }
     });
     

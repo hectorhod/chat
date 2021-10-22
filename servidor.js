@@ -35,3 +35,18 @@ io.on("connection", function (client) {
 http.listen(PORT, function(){
 console.log('Servidor rodando na porta %s', PORT);
 });
+
+
+app.get('/clients',function(req,res){
+  var tmp = [];
+
+  for(const [key,value] of Object.entries(clients)){
+    tmp.push(value)
+  }
+
+  // clients.forEach(obj => {
+  //   tmp.append(obj)
+  // });
+  console.log(tmp)
+  res.status(200).send(tmp)
+})
