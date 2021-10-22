@@ -17,7 +17,8 @@ io.on("connection", function (client) {
       console.log("Conectado: " + name);
       clients[client.id] = name;
       client.emit("update", "Você entrou na sala.");
-      client.broadcast.emit("update", name + " entrou na sala.")
+      client.broadcast.emit("update", name + " entrou na sala.");
+      io.emit("lista", clients);
     });
   
     client.on("send", function(msg){
@@ -35,14 +36,3 @@ io.on("connection", function (client) {
 http.listen(PORT, function(){
 console.log('Servidor rodando na porta %s', PORT);
 });
-
-
-app.get('/clients',function(req,res){
-  var tmp = [];
-
-  for(const [key,value] of Object.entries(clients)){
-    tmp.push(value)
-  }
-  console.log(tmp)
-  res.status(200).send(tmp)
-})

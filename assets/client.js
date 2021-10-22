@@ -19,8 +19,15 @@ $(document).ready(function(){
     socket.on("update", function(msg) {
         if (ready) {
             $('.chat').append('<li class="info">' + msg + '</li>')
-            $('#clients').load('/clients')
+        }
+    });
 
+    socket.on("lista", function(clients){
+        if (ready) {
+            $('#navbar__menu').html("");
+            for(const [key,value] of Object.entries(clients)){
+                $('#navbar__menu').append('<li class="navbar__item">'+ value +'</li>')
+            }
         }
     });
     
@@ -46,4 +53,15 @@ $(document).ready(function(){
                         scrollToBottom();
         }
        });
+    
+    const menu = document.querySelector('#mobile-menu')
+    const menuLink = document.querySelector('.navbar__menu')
+
+    // display mobile menu
+    const mobileMenu = () => {
+    menu.classList.toggle('is-active')
+    menuLink.classList.toggle('active')
+    }
+
+    menu.addEventListener('click', mobileMenu);
 });
