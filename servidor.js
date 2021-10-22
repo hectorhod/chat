@@ -43,10 +43,6 @@ app.get('/clients',function(req,res){
   for(const [key,value] of Object.entries(clients)){
     tmp.push(value)
   }
-
-  // clients.forEach(obj => {
-  //   tmp.append(obj)
-  // });
   console.log(tmp)
   res.status(200).send(tmp)
 })
