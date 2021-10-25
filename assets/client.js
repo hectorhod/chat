@@ -68,6 +68,6 @@ $(document).ready(function(){
     function getRandomColor() {
         var randomColorHaxValues = Math.floor(Math.random()*16777215).toString(16);
 
-        $('p').css('color',randomColorHaxValues);
+        $('.msg spam').css('color',randomColorHaxValues);
     }
 });
