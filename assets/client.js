@@ -64,4 +64,10 @@ $(document).ready(function(){
     }
 
     menu.addEventListener('click', mobileMenu);
+
+    function getRandomColor() {
+        var randomColorHaxValues = Math.floor(Math.random()*16777215).toString(16);
+
+        $('p').css('color',randomColorHaxValues);
+    }
 });
