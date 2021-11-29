@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="HandheldFriendly" content="true" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!-- <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" /> -->
+ <title>Bem Vindo ao Chatão!</title>
+ <link rel="stylesheet" href="./css.css">
+</head>
+<body>
+<div hidden>
+ <form id="submit"><input type="text" id="nickname" value="<%= username %>"/></form>
+</div>
+<div id="chat">
+
+ <div class="menu" >
+ <div class="name" id="name">Alex</div>
+ <div class="last" id="time">18:09</div>
+ <div class="navbar__toggle" id="mobile-menu">
+     <span class="bar"></span>
+     <span class="bar"></span>
+     <span class="bar"></span>
+ </div>
+ <div class="navbar__menu">
+    
+</div>
+ </div>
+
+ <ol class="chat">
+ 
+ </ol>
+ 
+ <input class="textarea" type="text" placeholder="Digita aí!" id="textarea" />
+</div>
+ <script src="/jquery/jquery.min.js"></script>
+ <script src="/socket.io-client/socket.io.js"></script>
+ <script src="./client2.js"></script>
+ <script>
+    scrollingElement = (document.scrollingElement || document.body)
+    function scrollToBottom () {
+        scrollingElement.scrollTop = scrollingElement.scrollHeight;
+    }
+ </script>
+</body>
+</html>
